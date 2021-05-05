@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | kgngp</title>
+    <script src="Build/UnityLoader.js"></script>
+	<style>	
+	#SceneNumber{
+		float:rigth;
+	}
+	#SceneName{
+		float:rigth;
+	}
+	</style>
+    <script>
+		// load unity instance
+		var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Builds.json");	 
+		
+		// funciton invoked upon unity scene loaded
+		function OnUnityModelLoaded(arg){
+			// alert("received callback from unity" + arg);
+			console.log("received callback from unity" + arg);
+			gameInstance.SendMessage("BrowserInteractor","LoadSceneByNumber","3");
+		}	
+		
+		// load scene by sending scene number
+		function LoadSceneByNumber(value){
+			gameInstance.SendMessage("BrowserInteractor","LoadSceneByNumber",value);
+		}
+
+		// load scene by sending scene name
+		function LoadSceneByName(value){
+			gameInstance.SendMessage("BrowserInteractor","LoadSceneByName",value);
+		}			
+    </script>
+	</head>
+	<body>
+    <div id="gameContainer" style="width: 80%; height: 50%px; margin: auto"></div>  
+  
+	<div id ="SceneNumber"><select onChange="LoadSceneByNumber(this.value)">	
+	<option value = "0">SampleScene by Number</option>
+	<option value = "1">SampleScene 1 by Number</option>
+	<option value = "2">SampleScene 2 by Number</option>
+	<option value = "3">SampleScene 3 by Number</option>
+	<option value = "4">SampleScene 4 by Number</option>	
+	</select>
+	</div>
+  
+	<div id ="SceneName"><select onChange="LoadSceneByName(this.value)">	
+	<option value = "SampleScene">SampleScene by Name</option>
+	<option value = "SampleScene 1">SampleScene 1 by Name</option>
+	<option value = "SampleScene 2">SampleScene 2 by Name</option>
+	<option value = "SampleScene 3">SampleScene 3 by Name</option>
+	<option value = "SampleScene 4">SampleScene 4 by Name</option>	
+	</select>
+	</div>
+  
+  </body>
+</html>
