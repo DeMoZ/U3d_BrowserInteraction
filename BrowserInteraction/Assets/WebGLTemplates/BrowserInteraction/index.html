@@ -7,15 +7,13 @@
     <script src="Build/UnityLoader.js"></script>
 	<style>	
 	#SceneNumber{
-		float:rigth;
 	}
 	#SceneName{
-		float:rigth;
 	}
 	</style>
     <script>
 		// load unity instance
-		var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Builds.json");	 
+		var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Builds.json");		
 		
 		// funciton invoked upon unity scene loaded
 		function OnUnityModelLoaded(arg){
@@ -23,6 +21,12 @@
 			console.log("received callback from unity" + arg);
 			gameInstance.SendMessage("BrowserInteractor","LoadSceneByNumber","3");
 		}	
+		
+		// function invoker upon unity scene loaded
+		function BrowserInfo(){
+			console.log("BrowserInteraction from unity BrowserInfo");
+			gameInstance.SendMessage("BrowserInteractor","FromBrowserInfo","I am sending this from browser into Unity");
+		}
 		
 		// load scene by sending scene number
 		function LoadSceneByNumber(value){
@@ -36,7 +40,7 @@
     </script>
 	</head>
 	<body>
-    <div id="gameContainer" style="width: 80%; height: 50%px; margin: auto"></div>  
+    <div id="gameContainer" style="width: 80%; height: 50%; margin: auto"></div>  
   
 	<div id ="SceneNumber"><select onChange="LoadSceneByNumber(this.value)">	
 	<option value = "0">SampleScene by Number</option>

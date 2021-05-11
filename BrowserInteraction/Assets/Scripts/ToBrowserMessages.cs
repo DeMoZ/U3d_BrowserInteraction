@@ -11,6 +11,9 @@ public class ToBrowserMessages : MonoBehaviour
  #pragma warning disable CA2101
          [DllImport("__Internal")]
          private static extern string OnModelLoaded(string value);
+         
+         [DllImport("__Internal")]
+         private static extern string ToBrowserInfo();
  #pragma warning restore CA2101
 #endif
 
@@ -27,6 +30,8 @@ public class ToBrowserMessages : MonoBehaviour
  #pragma warning disable CA2101
          Debug.LogWarning("C# communicate to browser");
          OnModelLoaded(helloValue);
+        
+         ToBrowserInfo();
  #pragma warning restore CA2101
 #endif
     }

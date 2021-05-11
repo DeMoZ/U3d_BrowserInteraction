@@ -289,7 +289,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &963194225
 GameObject:
@@ -372,7 +372,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1208723787
 GameObject:
@@ -548,7 +548,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1757147624}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e995dc2902d78374cb45f7ee681ff192, type: 3}
+  m_Script: {fileID: 11500000, guid: ca0461f4edbfcf745b2b21155e0cdf56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1208723788}
@@ -642,10 +642,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1757147624}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 593924a4ffa343aaad3ea500ca0f5456, type: 3}
+  m_Script: {fileID: 11500000, guid: cb8d97f3974aa614589f4a872cc26ccb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  helloValue: 
+  helloValue: AAA
 --- !u!1001 &2106584404236020683
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -671,7 +671,7 @@ PrefabInstance:
     - target: {fileID: 2106584405290476405, guid: b8bb0b9b2a0e39449b8a4985f23f79ac,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2106584405290476405, guid: b8bb0b9b2a0e39449b8a4985f23f79ac,
         type: 3}

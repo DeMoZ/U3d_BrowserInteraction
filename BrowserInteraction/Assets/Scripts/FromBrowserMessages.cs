@@ -12,7 +12,7 @@ public class FromBrowserMessages : MonoBehaviour
     {
         if (instance == null)
             instance = this;
-        else if (instance == this) 
+        else if (instance == this)
             Destroy(gameObject);
 
         DontDestroyOnLoad(gameObject);
@@ -39,5 +39,10 @@ public class FromBrowserMessages : MonoBehaviour
         Debug.LogWarning($"LoadSceneByName {value}");
 
         SceneManager.LoadScene(value);
+    }
+
+    public void FromBrowserInfo(string value)
+    {
+        Debug.LogWarning($"BrowserInfo {value}");
     }
 }
