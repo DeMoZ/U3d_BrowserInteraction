@@ -1,64 +1,35 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | kgngp</title>
+    <title>Unity WebGL Player | BrowserInteraction</title>
     <script src="Build/UnityLoader.js"></script>
-	<style>	
-	#SceneNumber{
-	}
-	#SceneName{
-	}
-	</style>
+   
     <script>
-		// load unity instance
-		var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Builds.json");		
-		
-		// funciton invoked upon unity scene loaded
-		function OnUnityModelLoaded(arg){
-			// alert("received callback from unity" + arg);
-			console.log("received callback from unity" + arg);
-			gameInstance.SendMessage("BrowserInteractor","LoadSceneByNumber","3");
-		}	
-		
-		// function invoker upon unity scene loaded
-		function BrowserInfo(){
-			console.log("BrowserInteraction from unity BrowserInfo");
-			gameInstance.SendMessage("BrowserInteractor","FromBrowserInfo","I am sending this from browser into Unity");
-		}
-		
-		// load scene by sending scene number
-		function LoadSceneByNumber(value){
-			gameInstance.SendMessage("BrowserInteractor","LoadSceneByNumber",value);
-		}
+        // load unity instance
+        var gameInstance = UnityLoader.instantiate("gameContainer", "Build/webBuild.json");
 
-		// load scene by sending scene name
-		function LoadSceneByName(value){
-			gameInstance.SendMessage("BrowserInteractor","LoadSceneByName",value);
-		}			
+        // function invoked upon unity scene loaded
+        function OnUnityModelLoaded() {
+            //window.alert("Hello, world!");
+            console.log("browser received : unity loaded");
+        }
+
+        function ReceiveString(arg) {
+            console.log("browser received : ReceiveString: "+arg);
+        }
+
+        function ReceiveNumber(arg) {
+            console.log("browser received : ReceiveNumber: "+arg);
+        }
+
+        function ReceiveJson(arg) {
+            console.log("browser received : ReceiveJson: "+arg);
+        }        
     </script>
-	</head>
-	<body>
-    <div id="gameContainer" style="width: 80%; height: 50%; margin: auto"></div>  
-  
-	<div id ="SceneNumber"><select onChange="LoadSceneByNumber(this.value)">	
-	<option value = "0">SampleScene by Number</option>
-	<option value = "1">SampleScene 1 by Number</option>
-	<option value = "2">SampleScene 2 by Number</option>
-	<option value = "3">SampleScene 3 by Number</option>
-	<option value = "4">SampleScene 4 by Number</option>	
-	</select>
-	</div>
-  
-	<div id ="SceneName"><select onChange="LoadSceneByName(this.value)">	
-	<option value = "SampleScene">SampleScene by Name</option>
-	<option value = "SampleScene 1">SampleScene 1 by Name</option>
-	<option value = "SampleScene 2">SampleScene 2 by Name</option>
-	<option value = "SampleScene 3">SampleScene 3 by Name</option>
-	<option value = "SampleScene 4">SampleScene 4 by Name</option>	
-	</select>
-	</div>
-  
-  </body>
+</head>
+<body>
+<div id="gameContainer" style="width: 80%; height: 50%; margin: auto"></div>
+</body>
 </html>

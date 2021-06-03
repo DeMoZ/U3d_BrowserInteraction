@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Тег INPUT</title>
+</head>
+<body>
+
+<p>Local: 880x600<Br>
+    <iframe id="iframeLocal" width="880" height="600" align="left"
+            name="iframe1" src="http://192.168.1.66:8080"></iframe>
+</p>
+
+<form name="test">
+    <p>String<Br>
+        <textarea id="StringField" name="String" cols="40" rows="3"></textarea></p>
+    <p>
+        <input type="reset" value="Clear">
+        <input id="SctringBtn" type="button" value="Send String" onclick="sendString();"/>
+    </p>
+    <p>Number<Br>
+        <textarea id="NumberField" name="Number" cols="10" rows="1"></textarea></p>
+    <p>
+        <input type="reset" value="Clear">
+        <input id="NumberBtm" type="button" value="Send Number" onclick="sendNumber();"/>
+    </p>
+    <p>Json<Br>
+        <textarea id="JsonField" name="Json" cols="40" rows="10"></textarea></p>
+    <p>
+        <input type="reset" value="Clear">
+        <input id="JsonBtn" type="button" value="Send Json" onclick="sendJson();"/>
+    </p>
+</form>
+
+<script>
+    // ---------------------------------data exchange
+    function sendString() {
+        console.log(document.getElementById('StringField').value);
+        var value = document.getElementById('StringField').value;
+
+        // window.frames[0].postMessage(JSON.stringify({value: value}), '*')
+    }
+</script>
+
+<script>
+    // ---------------------------------levels
+    // function invoker upon unity scene loaded
+    function BrowserInfo() {
+        console.log("BrowserInteraction from unity BrowserInfo");
+
+        // This script sets OSName variable as follows:
+        // "Windows"    for all versions of Windows
+        // "MacOS"      for all versions of Macintosh OS
+        // "Linux"      for all versions of Linux
+        // "UNIX"       for all other UNIX flavors 
+        // "Unknown OS" indicates failure to detect the OS
+
+        var OSName = "Unknown OS";
+        let isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
+
+        if (isMobile) OSName = "Mobile"
+        else {
+            if (navigator.appVersion.indexOf("Win") != -1) OSName = "Windows";
+            if (navigator.appVersion.indexOf("Mac") != -1) OSName = "MacOS";
+            if (navigator.appVersion.indexOf("X11") != -1) OSName = "UNIX";
+            if (navigator.appVersion.indexOf("Linux") != -1) OSName = "Linux";
+        }
+
+        console.log('Your OS: ' + OSName);
+
+        gameInstance.SendMessage("BrowserInteractor", "FromBrowserInfo", OSName);
+    }
+
+    // load scene by sending scene number
+    function LoadSceneByNumber(value) {
+        gameInstance.SendMessage("BrowserInteractor", "LoadSceneByNumber", value);
+    }
+
+    // load scene by sending scene name
+    function LoadSceneByName(value) {
+        gameInstance.SendMessage("BrowserInteractor", "LoadSceneByName", value);
+    }    
+</script>
+
+<div id="SceneNumber"><select onChange="LoadSceneByNumber(this.value)">
+    <option value="0">SampleScene by Number</option>
+    <option value="1">SampleScene 1 by Number</option>
+    <option value="2">SampleScene 2 by Number</option>
+    <option value="3">SampleScene 3 by Number</option>
+    <option value="4">SampleScene 4 by Number</option>
+</select>
+</div>
+
+<div id="SceneName"><select onChange="LoadSceneByName(this.value)">
+    <option value="SampleScene">SampleScene by Name</option>
+    <option value="SampleScene 1">SampleScene 1 by Name</option>
+    <option value="SampleScene 2">SampleScene 2 by Name</option>
+    <option value="SampleScene 3">SampleScene 3 by Name</option>
+    <option value="SampleScene 4">SampleScene 4 by Name</option>
+</select>
+</div>
+
+</body>
+</html>
