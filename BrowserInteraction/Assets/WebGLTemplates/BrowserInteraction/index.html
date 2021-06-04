@@ -5,28 +5,29 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | BrowserInteraction</title>
     <script src="Build/UnityLoader.js"></script>
-   
+
     <script>
         // load unity instance
-        var gameInstance = UnityLoader.instantiate("gameContainer", "Build/webBuild.json");
+        var unityInstance = UnityLoader.instantiate("gameContainer", "Build/webBuild.json");
 
         // function invoked upon unity scene loaded
         function OnUnityModelLoaded() {
-            //window.alert("Hello, world!");
-            console.log("browser received : unity loaded");
+             console.log("browser received : unity loaded");            
         }
 
-        function ReceiveString(arg) {
-            console.log("browser received : ReceiveString: "+arg);
-        }
+         function ReceiveString(arg) {
+             console.log("browser received : ReceiveString: " + arg);
+         }
 
-        function ReceiveNumber(arg) {
-            console.log("browser received : ReceiveNumber: "+arg);
-        }
+         function ReceiveNumber(arg) {
+             console.log("browser received : ReceiveNumber: " + arg);
+         }
 
-        function ReceiveJson(arg) {
-            console.log("browser received : ReceiveJson: "+arg);
-        }        
+         function ReceiveJson(arg) {
+             console.log("browser received : ReceiveJson: " + arg);
+             unityInstance.SendMessage("BrowserInteractor", "ReceiveJson", arg);
+         }
+
     </script>
 </head>
 <body>

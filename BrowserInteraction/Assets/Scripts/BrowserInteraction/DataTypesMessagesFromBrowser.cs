@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
 namespace BrowserInteraction
 {
@@ -7,8 +6,8 @@ namespace BrowserInteraction
     {
         private static DataTypesMessagesFromBrowser _instance = null;
 
-        [SerializeField] private Text text;
-        [SerializeField] private Text osInfo;
+        // [SerializeField] private Text text;
+        // [SerializeField] private Text osInfo;
         private void Start()
         {
             if (_instance == null)
@@ -35,7 +34,7 @@ namespace BrowserInteraction
             var rez = JsonUtility.FromJson<Box>(value);
             
             Debug.Log($"json converted: name= {rez.name}; size= {rez.size}; things amount= {rez.things.Count}");
-            Debug.Log($"things[0]: name= {rez.things[0].name}; size = {rez.things[0].size}");
+                // Debug.Log($"things[0]: name= {rez.things[0].name}; size = {rez.things[0].size}");
         }
         
         

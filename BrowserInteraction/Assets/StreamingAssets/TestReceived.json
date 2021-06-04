@@ -1,0 +1,16 @@
+{
+  "Box": {
+    "name": "myBox",
+    "size": "3.15",
+    "things": [
+      {
+        "name": "my thing 0",
+        "size": "12.2"
+      },
+      {
+        "name": "my other thing 1",
+        "size": "1111344.123123"
+      }
+    ]
+  }
+}

@@ -7,6 +7,7 @@ namespace BrowserInteraction
         
     }
 
+    [System.Serializable]
     public class Box
     {
         public string name;
@@ -14,6 +15,7 @@ namespace BrowserInteraction
         public List<Thing> things;
     }
 
+    [System.Serializable]
     public class Thing
     {
         public string name;

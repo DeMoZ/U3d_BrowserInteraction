@@ -369,16 +369,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 693703110746368185, guid: b8bb0b9b2a0e39449b8a4985f23f79ac,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2106584404417526689, guid: b8bb0b9b2a0e39449b8a4985f23f79ac,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2106584405290476401, guid: b8bb0b9b2a0e39449b8a4985f23f79ac,
         type: 3}
       propertyPath: m_Name
@@ -488,36 +478,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2106584405290476407, guid: b8bb0b9b2a0e39449b8a4985f23f79ac,
-        type: 3}
-      propertyPath: m_UiScaleMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2106584405290476407, guid: b8bb0b9b2a0e39449b8a4985f23f79ac,
-        type: 3}
-      propertyPath: m_MatchWidthOrHeight
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2106584405290476407, guid: b8bb0b9b2a0e39449b8a4985f23f79ac,
-        type: 3}
-      propertyPath: m_ReferenceResolution.x
-      value: 1920
-      objectReference: {fileID: 0}
-    - target: {fileID: 2106584405290476407, guid: b8bb0b9b2a0e39449b8a4985f23f79ac,
-        type: 3}
-      propertyPath: m_ReferenceResolution.y
-      value: 1080
-      objectReference: {fileID: 0}
-    - target: {fileID: 5797763865699055516, guid: b8bb0b9b2a0e39449b8a4985f23f79ac,
-        type: 3}
-      propertyPath: m_text
-      value: "\u200B"
-      objectReference: {fileID: 0}
-    - target: {fileID: 6344021915066245191, guid: b8bb0b9b2a0e39449b8a4985f23f79ac,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8bb0b9b2a0e39449b8a4985f23f79ac, type: 3}
